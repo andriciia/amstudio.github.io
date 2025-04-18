@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AM Studio - Студия растяжки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="img/logo.jpg" alt="AM Studio" class="logo-img">
+                </div>
+
+                <!-- Бургер-меню для мобильных -->
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Основная навигация -->
+                <nav class="header__nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link">Главная</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">О студии</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
+                        <li class="nav__item"><a href="#prices" class="nav__link">Цены</a></li>
+                        <li class="nav__item"><a href="#schedule" class="nav__link">Расписание</a></li>
+                        <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__contacts">
+
+                    <button class="btn btn--primary" id="booking-btn">Записаться на занятие</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">AM STUDIO</h1>
+                <p class="hero__subtitle">Студия профессиональной растяжки в Саратове</p>
+                <div class="hero__contacts">
+                    <a href="tel:+79379677313" class="hero__phone">
+                        <i class="fas fa-phone"></i> +7 (937) 967-73-13
+                    </a>
+                    <p class="hero__worktime">Ежедневно с 8:00 до 22:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Наша студия</h2>
+            <div class="static-gallery">
+                <!-- Первое фото (главное, крупное) -->
+                <div class="main-photo">
+                    <img src="img/gallery1.jpg" alt="Зал для растяжки" class="gallery-img">
+                </div>
+
+                <!-- Второй ряд (3 фото поменьше) -->
+                <div class="gallery-row">
+                    <div class="small-photo">
+                        <img src="img/gallery2.jpg" alt="Групповое занятие" class="gallery-img">
+                    </div>
+                    <div class="small-photo">
+                        <img src="img/gallery3.jpg" alt="Индивидуальная тренировка" class="gallery-img">
+                    </div>
+                    <div class="small-photo">
+                        <img src="img/gallery4.jpg" alt="Тренировка" class="gallery-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages__grid">
+                <div class="advantage__card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Опытные тренеры</h3>
+                    <p>Профессиональные инструкторы с медицинским образованием</p>
+                </div>
+                <div class="advantage__card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Индивидуальный подход</h3>
+                    <p>Программы для любого уровня подготовки</p>
+                </div>
+                <div class="advantage__card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Комфортная атмосфера</h3>
+                    <p>Уютный зал с современным оборудованием</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+
+    </main>
+
+    <!-- Модальное окно записи -->
+    <div class="modal" id="booking-modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h2 class="modal__title">Запись на занятие</h2>
+            <form class="booking-form" id="booking-form">
+                <div class="form__group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form__group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form__group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form__group">
+                    <label for="service">Выберите услугу</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Выберите --</option>
+                        <option value="lite">LITE STRECHING</option>
+                        <option value="stretching">STRECHING</option>
+                        <option value="hot">HOT STRECHING</option>
+                        <option value="back">ЗДОРОВАЯ СПИНА</option>
+                        <option value="functional">ФУНКЦИОНАЛ</option>
+                        <option value="meditative">МЕДИТАТИВНАЯ РАСТЯЖКА</option>
+                        <option value="functional-str">ФУНКЦИОНАЛ + STR</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="date">Дата занятия</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form__group">
+                    <label for="time">Время занятия</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form__group form__group--checkbox">
+                    <input type="checkbox" id="agreement" name="agreement" required>
+                    <label for="agreement">Я согласен с <a href="#" class="policy-link">политикой
+                            конфиденциальности</a></label>
+                </div>
+                <button type="submit" class="btn btn--submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <!DOCTYPE html>
+    <html lang="ru">
+
+    <head>
+        <!-- Остальная часть head остается без изменений -->
+    </head>
+
+    <body>
+        <!-- Шапка сайта и другие секции остаются без изменений -->
+
+        <!-- Добавляем секцию "О студии" -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__text">
+                        <h2 class="section-title">О студии</h2>
+                        <div class="about__description">
+                            <p>AM Studio — это пространство, созданное для тех, кто ценит гармонию тела и духа. Мы
+                                предлагаем профессиональные тренировки по растяжке для людей любого уровня подготовки.
+                            </p>
+                            <p>Наша миссия — помочь вам обрести гибкость, улучшить осанку и избавиться от мышечных
+                                зажимов в комфортной и дружелюбной атмосфере.</p>
+                            <p>В студии работают опытные тренеры с медицинским образованием, которые подберут
+                                индивидуальную программу занятий с учетом ваших особенностей и целей.</p>
+                        </div>
+                        <div class="about__features">
+                            <div class="feature__item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Индивидуальный подход к каждому клиенту</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Профессиональные тренеры с медицинским образованием</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Уютная атмосфера и современное оборудование</span>
+                            </div>
+                            <div class="feature__item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Программы для всех уровней подготовки</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__image">
+                        <img src="img/about.jpg" alt="О студии AM Studio">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Добавляем после секции advantages -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Услуги</h2>
+
+                <div class="services__grid">
+                    <!-- Услуга 1 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">LITE STRETCHING</h3>
+                            <p class="service__subtitle">Для тех, кто только знакомится с растяжкой</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">На тренировке LITE мы не тянем шпагаты, подкачка тела
+                                проходит с ощущением легкого пробуждения (нет интенсивности). Спокойный темп без прыжков
+                                и сильных фитнес резинок, без дополнительных весов.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>60 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>800 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 2 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">STRETCHING</h3>
+                            <p class="service__subtitle">Для тех, кто уже знаком с нагрузками на тело</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Улучшает общее состояние здоровья, подтягивает тело.
+                                Укрепление и расслабление мышц, снятие скованности и повышение выносливости.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>60 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>1000 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 3 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">HOT STRETCHING</h3>
+                            <p class="service__subtitle">Для выносливых и тех, кто любит погорячее</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Благодаря температуре улучшается эластичность, уходят
+                                болевые ощущения и зажимы. С обильным потом выходит лишняя жидкость, поэтому нужно
+                                поддерживать водно-солевой баланс.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>75 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>1200 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 4 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">ЗДОРОВАЯ СПИНА</h3>
+                            <p class="service__subtitle">Для тех, кто хочет ощутить грацию и женственность</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Тренировка состоит из упражнений, направленных на укрепление
+                                и вытяжение мышц спины, рук, живота. Помогает снять напряжение и улучшить осанку.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>60 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>900 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 5 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">ФУНКЦИОНАЛ</h3>
+                            <p class="service__subtitle">Для тех, кто хочет пропотеть на тренировке</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Силовая тренировка на все группы мышц. Упражнения развивают
+                                силу, гибкость, координацию и баланс. Интенсивная нагрузка для достижения быстрых
+                                результатов.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>60 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>1000 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 6 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">МЕДИТАТИВНАЯ РАСТЯЖКА</h3>
+                            <p class="service__subtitle">Для тех, кто страдает от стресса и тревоги</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Поддерживающие тренировки для глубокого отдыха и мягкого
+                                развития гибкости тела. Помогает снизить напряжение, достичь гармоничного целостного
+                                развития.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>60 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>800 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Услуга 7 -->
+                    <div class="service__card">
+                        <div class="service__header">
+                            <h3 class="service__title">ФУНКЦИОНАЛ + STR</h3>
+                            <p class="service__subtitle">Для тех, кто хочет подкачаться и расслабиться</p>
+                        </div>
+                        <div class="service__content">
+                            <p class="service__description">Упор на силовые упражнения + растяжка для расслабления.
+                                Динамичная тренировка, направленная на проработку мышц и развитие гибкости тела.</p>
+                            <div class="service__details">
+                                <div class="detail__item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>75 минут</span>
+                                </div>
+                                <div class="detail__item">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>1200 руб.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Добавляем после раздела услуг -->
+        <section id="prices" class="prices-section">
+            <div class="container">
+                <h2 class="section-title">ЦЕНЫ</h2>
+
+                <div class="price-image">
+                    <img src="img/price-image.jpg" alt="Наши цены" width="1280" height="725">
+                </div>
+            </div>
+        </section>
+        <!-- Раздел "Расписание" -->
+        <section id="schedule" class="schedule-section">
+            <div class="container">
+                <h2 class="section-title">РАСПИСАНИЕ</h2>
+
+                <div class="schedule-image">
+                    <img src="img/schedule-image.jpg" alt="Наше расписание" width="1280" height="725">
+                </div>
+            </div>
+        </section>
+        <!-- Раздел "Клубная карта" -->
+        <section id="club-card" class="club-card-section">
+            <div class="container">
+                <h2 class="section-title">КЛУБНАЯ КАРТА</h2>
+                <p class="section-subtitle">Получите консультацию по клубным картам прямо сейчас!</p>
+
+                <div class="club-card-content">
+                    <div class="club-card-form">
+                        <p class="form-description">Заполните форму ниже<br>и наш менеджер свяжется с Вами!</p>
+
+                        <form id="club-card-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Имя..." required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Номер телефона..." required>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="agreement" name="agreement" required>
+                                <label for="agreement">Согласие на обработку персональных данных</label>
+                            </div>
+                            <button type="submit" class="btn btn-submit">Отправить</button>
+                        </form>
+                    </div>
+        </section>
+        <!-- Раздел "Фотоальбом" -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">ФОТОАЛЬБОМ</h2>
+
+                <div class="gallery-grid">
+                    <!-- Фото 1-15 -->
+                    <div class="gallery-item">
+                        <img src="img/photo1.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo2.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo3.jpg" alt="Групповое занятие" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo4.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo5.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo6.jpg" alt="Групповое занятие" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo7.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo8.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo9.jpg" alt="Групповое занятие" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo10.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo11.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo12.jpg" alt="Групповое занятие" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo13.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo14.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo15.jpg" alt="Групповое занятие" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo16.jpg" alt="Интерьер студии" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo17.jpg" alt="Занятие в AM Studio" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/photo18.jpg" alt="Тренировка по растяжке" loading="lazy">
+                    </div>
+
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- Раздел "Контакты" -->
+        <section id="contacts" class="contacts-section">
+            <div class="container">
+                <h2 class="section-title">КОНТАКТЫ</h2>
+
+                <div class="contacts-grid">
+                    <!-- Блок с адресом и контактами -->
+                    <div class="contacts-info">
+                        <h3>Как нас найти</h3>
+
+                        <div class="contact-item address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Астраханская 102к8, Саратов<br><span></span></p>
+                        </div>
+
+                        <div class="contact-item phone">
+                            <i class="fas fa-phone"></i>
+                            <p><a href="tel:+79379677313">+7 (937) 967-73-13</a></p>
+                        </div>
+
+                        <div class="contact-item schedule">
+                            <i class="fas fa-clock"></i>
+                            <p>Ежедневно с 08:00 до 22:00</p>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://vk.com/amstudio1322" target="_blank" class="social-link vk">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://www.instagram.com/amstudlo/" target="_blank" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="map-container">
+                        <iframe
+                            src="https://yandex.ru/map-widget/v1/?ll=46.009722,51.534065&z=16&pt=46.009722,51.534065,pm2grl"
+                            width="100%" height="400" frameborder="0">
+                        </iframe>
+                    </div>
+        </section>
+        <!-- Подвал сайта -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Логотип -->
+                    <div class="footer-logo">
+                        <img src="img/logo.jpg" alt="AM Studio" class="logo-img">
+                    </div>
+
+                    <!-- Меню -->
+                    <nav class="footer-nav">
+                        <ul class="nav-list">
+                            <li><a href="#home">Главная</a></li>
+                            <li><a href="#about">О нас</a></li>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#schedule">Расписание</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Документы -->
+                    <div class="footer-docs">
+                        <ul class="docs-list">
+                            <li><a href="docs/privacy-policy.docx" download>Политика конфиденциальности</a>
+                            </li>
+                            <li><a href="docs/user-agreement.docx" download>Пользовательское соглашение</a>
+                            </li>
+                            <li><a href="docs/personal-data.docx" download>Согласие на обработку данных</a>
+                            </li>
+                            <li><a href="docs/license-agreement.docx" download>Лицензионное соглашение</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Копирайт -->
+                <div class="copyright">
+                    <p>© 2025 AM Studio. Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
